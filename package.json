@@ -1,0 +1,40 @@
+{
+  "name": "strapi-backend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^2.0.4",
+    "@notum-cz/strapi-plugin-content-versioning": "^0.4.10",
+    "@strapi/plugin-color-picker": "^4.12.7",
+    "@strapi/plugin-i18n": "4.12.7",
+    "@strapi/plugin-seo": "^1.9.2",
+    "@strapi/plugin-users-permissions": "4.12.7",
+    "@strapi/strapi": "4.12.7",
+    "pg": "8.11.3",
+    "strapi-plugin-duplicate-button": "^1.1.13",
+    "strapi-plugin-fuzzy-search": "^2.0.5",
+    "strapi-plugin-import-export-entries": "^1.21.1",
+    "strapi-plugin-local-image-sharp": "^1.7.0",
+    "strapi-plugin-placeholder": "^4.4.0",
+    "strapi-plugin-publisher": "^1.4.0",
+    "strapi-plugin-transformer": "^3.1.0"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "7f4c736c-a2ec-4fa5-96cc-4da416ee904b"
+  },
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

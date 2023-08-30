@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_sellers",
+  "info": {
+    "displayName": "seller"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "info": {
+      "type": "richtext"
+    }
+  }
+}

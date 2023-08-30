@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "addresses",
+  "info": {
+    "singularName": "address",
+    "pluralName": "addresses",
+    "displayName": "address",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "building": {
+      "type": "string"
+    },
+    "apartment_no": {
+      "type": "string"
+    },
+    "street": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "addresses"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "city": {
+      "type": "enumeration",
+      "enum": [
+        "Cairo",
+        "Giza",
+        "Alexandria",
+        "Dakahlia",
+        "Red Sea",
+        "Beheira",
+        "Fayoum",
+        "Gharbiya",
+        "Ismailia",
+        "Menofia",
+        "Minya",
+        "Qaliubiya",
+        "New Valley",
+        "Suez",
+        "Aswan",
+        "Assiut",
+        "Beni Suef",
+        "Port Said",
+        "Damietta",
+        "Sharkia",
+        "South Sinai",
+        "Kafr Al sheikh",
+        "Matrouh",
+        "Luxor",
+        "Qena",
+        "North Sinai",
+        "Sohag"
+      ]
+    },
+    "floor": {
+      "type": "integer"
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "address"
+    },
+    "landmarks": {
+      "type": "text"
+    }
+  }
+}

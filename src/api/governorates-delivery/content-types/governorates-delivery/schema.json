@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "governorates_deliveries",
+  "info": {
+    "singularName": "governorates-delivery",
+    "pluralName": "governorates-deliveries",
+    "displayName": "governorates-delivery"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "governoratesDelivery": {
+      "type": "json"
+    }
+  }
+}
