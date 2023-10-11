@@ -1,10 +1,11 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "coupons",
   "info": {
     "singularName": "coupon",
     "pluralName": "coupons",
-    "displayName": "coupon"
+    "displayName": "coupon",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
