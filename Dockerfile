@@ -4,11 +4,11 @@ RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev l
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
-WORKDIR /vglobal-backend/
+WORKDIR /hanaart-backend/
 COPY package.json package-lock.json ./
 RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install --only=production
-ENV PATH /vglobal-backend/node_modules/.bin:$PATH
-WORKDIR /vglobal-backend/app
+ENV PATH /hanaart-backend/node_modules/.bin:$PATH
+WORKDIR /hanaart-backend/app
 COPY . .
 RUN npm run build
 
@@ -17,13 +17,13 @@ FROM node:18-alpine
 RUN apk add --no-cache vips-dev
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
-WORKDIR /vglobal-backend/
-COPY --from=build /vglobal-backend/node_modules ./node_modules
-WORKDIR /vglobal-backend/app
-COPY --from=build /vglobal-backend/app ./
-ENV PATH /vglobal-backend/node_modules/.bin:$PATH
+WORKDIR /hanaart-backend/
+COPY --from=build /hanaart-backend/node_modules ./node_modules
+WORKDIR /hanaart-backend/app
+COPY --from=build /hanaart-backend/app ./
+ENV PATH /hanaart-backend/node_modules/.bin:$PATH
 
-RUN chown -R node:node /vglobal-backend/app
+RUN chown -R node:node /hanaart-backend/app
 USER node
 EXPOSE 1337
 CMD ["npm", "run", "start"]
