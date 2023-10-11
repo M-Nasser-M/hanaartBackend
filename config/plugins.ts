@@ -41,6 +41,29 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  meilisearch: {
+    config: {
+      // Your meili host
+      host: env("MEILI_HOST"),
+      // Your master key or private key
+      apiKey: env("MEILI_MASTER_KEY"),
+    },
+  },
+  upload: {
+    config: {
+      provider: "cloudinary",
+      providerOptions: {
+        cloud_name: env("CLOUDINARY_NAME"),
+        api_key: env("CLOUDINARY_KEY"),
+        api_secret: env("CLOUDINARY_SECRET"),
+      },
+      actionOptions: {
+        upload: {},
+        uploadStream: {},
+        delete: {},
+      },
+    },
+  },
   "local-image-sharp": {
     config: {
       cacheDir: ".image-cache",
@@ -53,32 +76,5 @@ module.exports = ({ env }) => ({
   },
   "import-export-entries": {
     enabled: true,
-  },
-  "fuzzy-search": {
-    enabled: true,
-    config: {
-      contentTypes: [
-        {
-          uid: "api::product.product",
-          modelName: "product",
-          transliterate: true,
-          fuzzysortOptions: {
-            characterLimit: 300,
-            threshold: -600,
-            limit: 10,
-            keys: [
-              {
-                name: "name",
-                weight: 100,
-              },
-              {
-                name: "description",
-                weight: -100,
-              },
-            ],
-          },
-        },
-      ],
-    },
   },
 });

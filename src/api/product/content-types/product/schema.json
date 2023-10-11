@@ -126,7 +126,7 @@
       },
       "type": "decimal"
     },
-    "stock": {
+    "availableStock": {
       "pluginOptions": {
         "versions": {
           "versioned": true
@@ -168,6 +168,28 @@
         }
       },
       "component": "shared.colors"
+    },
+    "onholdStock": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "biginteger"
+    },
+    "soldStock": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "biginteger"
     }
   }
 }
