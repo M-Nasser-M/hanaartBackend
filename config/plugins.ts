@@ -70,7 +70,6 @@ module.exports = ({ env }) => ({
       maxAge: 604800,
     },
   },
-  "duplicate-button": true,
   "content-versioning": {
     enabled: true,
   },

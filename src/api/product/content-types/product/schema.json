@@ -190,6 +190,21 @@
         }
       },
       "type": "biginteger"
+    },
+    "category": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "art",
+        "ink"
+      ]
     }
   }
 }
