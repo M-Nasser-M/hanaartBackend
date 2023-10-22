@@ -4,15 +4,13 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "blog"
+    "displayName": "blog",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {
-    "versions": {
-      "versioned": true
-    },
     "i18n": {
       "localized": true
     }
@@ -53,14 +51,15 @@
       "customField": "plugin::ckeditor5.CKEditor"
     },
     "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "versions": {
           "versioned": true
@@ -99,6 +98,19 @@
         "cat3",
         "cat4"
       ]
+    },
+    "slug": {
+      "pluginOptions": {
+        "versions": {
+          "versioned": true
+        },
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "targetField": "title",
+      "required": true
     }
   }
 }
