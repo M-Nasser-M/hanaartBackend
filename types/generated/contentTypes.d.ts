@@ -735,6 +735,7 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
     singularName: 'about-us';
     pluralName: 'about-uses';
     displayName: 'about-us';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -746,6 +747,7 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
   };
   attributes: {
     article: Attribute.RichText &
+      Attribute.Required &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
@@ -883,6 +885,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         versions: {
           versioned: true;
@@ -892,6 +895,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
         };
       }>;
     description: Attribute.Text &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         versions: {
           versioned: true;
@@ -901,6 +905,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
         };
       }>;
     article: Attribute.RichText &
+      Attribute.Required &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',
         {
@@ -913,6 +918,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
         };
       }>;
     cover: Attribute.Media &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         versions: {
           versioned: true;
@@ -1100,6 +1106,18 @@ export interface ApiHomeHome extends Schema.SingleType {
           localized: true;
         };
       }>;
+    header: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    subheader: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1267,6 +1285,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         versions: {
           versioned: true;
@@ -1276,6 +1295,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
         };
       }>;
     price: Attribute.Decimal &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         versions: {
           versioned: true;
@@ -1294,6 +1314,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
         };
       }>;
     cover: Attribute.Media &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         versions: {
           versioned: true;
@@ -1303,6 +1324,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
         };
       }>;
     description: Attribute.Text &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         versions: {
           versioned: true;
@@ -1342,6 +1364,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
         };
       }>;
     availableStock: Attribute.BigInteger &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         versions: {
           versioned: true;
@@ -1391,7 +1414,15 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    category: Attribute.Enumeration<['art', 'ink']> &
+    category: Attribute.Enumeration<
+      [
+        ' Art supplies',
+        'Hobbies',
+        'Art Journaling',
+        'Handmade Gifts',
+        'Clearance'
+      ]
+    > &
       Attribute.SetPluginOptions<{
         versions: {
           versioned: true;
@@ -1402,6 +1433,24 @@ export interface ApiProductProduct extends Schema.CollectionType {
       }>;
     slug: Attribute.UID<'api::product.product', 'name'> &
       Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    subcategory: Attribute.Enumeration<
+      [
+        'Pens, Pencils and Paints',
+        'Brushes and Tools',
+        'Canvas and Sketchbooks',
+        'Diamond Painting ',
+        'Coloring Books',
+        'Puzzles',
+        'Tools',
+        'Washi Tapes and stickers',
+        'Paper packs and Ephemra'
+      ]
+    > &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
