@@ -887,9 +887,6 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     title: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
@@ -897,9 +894,6 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     description: Attribute.Text &
       Attribute.Required &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
@@ -920,27 +914,18 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     cover: Attribute.Media &
       Attribute.Required &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
       }>;
     seo: Attribute.Component<'shared.seo'> &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
       }>;
     categories: Attribute.Enumeration<['cat1', 'cat2', 'cat3', 'cat4']> &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
@@ -948,9 +933,6 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     slug: Attribute.UID<'api::blog.blog', 'title'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
@@ -1287,9 +1269,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
     name: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
@@ -1297,18 +1276,12 @@ export interface ApiProductProduct extends Schema.CollectionType {
     price: Attribute.Decimal &
       Attribute.Required &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
       }>;
     images: Attribute.Media &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
@@ -1316,9 +1289,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
     cover: Attribute.Media &
       Attribute.Required &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
@@ -1326,9 +1296,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
     description: Attribute.Text &
       Attribute.Required &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
@@ -1347,18 +1314,12 @@ export interface ApiProductProduct extends Schema.CollectionType {
       }>;
     seo: Attribute.Component<'shared.seo'> &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
       }>;
     offer_price: Attribute.Decimal &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
@@ -1366,18 +1327,12 @@ export interface ApiProductProduct extends Schema.CollectionType {
     availableStock: Attribute.BigInteger &
       Attribute.Required &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
       }>;
     seller: Attribute.Component<'shared.seller'> &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
@@ -1389,27 +1344,18 @@ export interface ApiProductProduct extends Schema.CollectionType {
     >;
     colors: Attribute.Component<'shared.colors', true> &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
       }>;
     onholdStock: Attribute.BigInteger &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
       }>;
     soldStock: Attribute.BigInteger &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
@@ -1424,9 +1370,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
       ]
     > &
       Attribute.SetPluginOptions<{
-        versions: {
-          versioned: true;
-        };
         i18n: {
           localized: true;
         };
