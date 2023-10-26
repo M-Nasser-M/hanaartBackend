@@ -666,7 +666,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   collectionName: 'up_users';
   info: {
     name: 'user';
-    description: '';
     singularName: 'user';
     pluralName: 'users';
     displayName: 'User';
@@ -735,7 +734,6 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
     singularName: 'about-us';
     pluralName: 'about-uses';
     displayName: 'about-us';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -795,7 +793,6 @@ export interface ApiAddressAddress extends Schema.CollectionType {
     singularName: 'address';
     pluralName: 'addresses';
     displayName: 'address';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -873,7 +870,6 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     singularName: 'blog';
     pluralName: 'blogs';
     displayName: 'blog';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1005,7 +1001,6 @@ export interface ApiCouponCoupon extends Schema.CollectionType {
     singularName: 'coupon';
     pluralName: 'coupons';
     displayName: 'coupon';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1071,7 +1066,6 @@ export interface ApiHomeHome extends Schema.SingleType {
     singularName: 'home';
     pluralName: 'homes';
     displayName: 'home';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1255,7 +1249,6 @@ export interface ApiProductProduct extends Schema.CollectionType {
     singularName: 'product';
     pluralName: 'products';
     displayName: 'product';
-    description: '';
   };
   options: {
     draftAndPublish: true;

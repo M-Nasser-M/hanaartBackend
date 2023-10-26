@@ -4,8 +4,7 @@
   "info": {
     "singularName": "about-us",
     "pluralName": "about-uses",
-    "displayName": "about-us",
-    "description": ""
+    "displayName": "about-us"
   },
   "options": {
     "draftAndPublish": true
