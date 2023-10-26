@@ -4,7 +4,6 @@ export interface SharedColors extends Schema.Component {
   collectionName: 'components_shared_colors';
   info: {
     displayName: 'colors';
-    description: '';
   };
   attributes: {
     color: Attribute.String &

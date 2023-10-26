@@ -4,8 +4,7 @@
   "info": {
     "singularName": "product",
     "pluralName": "products",
-    "displayName": "product",
-    "description": ""
+    "displayName": "product"
   },
   "options": {
     "draftAndPublish": true
@@ -18,9 +17,6 @@
   "attributes": {
     "name": {
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -30,9 +26,6 @@
     },
     "price": {
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -51,9 +44,6 @@
         "audios"
       ],
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -70,9 +60,6 @@
         "audios"
       ],
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -80,9 +67,6 @@
     },
     "description": {
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -106,9 +90,6 @@
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -117,9 +98,6 @@
     },
     "offer_price": {
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -128,9 +106,6 @@
     },
     "availableStock": {
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -142,9 +117,6 @@
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -161,9 +133,6 @@
       "type": "component",
       "repeatable": true,
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -172,9 +141,6 @@
     },
     "onholdStock": {
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -183,9 +149,6 @@
     },
     "soldStock": {
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -194,9 +157,6 @@
     },
     "category": {
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }

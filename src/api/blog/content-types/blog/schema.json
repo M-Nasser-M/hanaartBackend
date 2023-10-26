@@ -4,8 +4,7 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "blog",
-    "description": ""
+    "displayName": "blog"
   },
   "options": {
     "draftAndPublish": true
@@ -18,9 +17,6 @@
   "attributes": {
     "title": {
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -30,9 +26,6 @@
     },
     "description": {
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -64,9 +57,6 @@
         "audios"
       ],
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -76,9 +66,6 @@
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -87,9 +74,6 @@
     },
     "categories": {
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
@@ -104,9 +88,6 @@
     },
     "slug": {
       "pluginOptions": {
-        "versions": {
-          "versioned": true
-        },
         "i18n": {
           "localized": true
         }
