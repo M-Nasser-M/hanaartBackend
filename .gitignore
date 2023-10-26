@@ -59,7 +59,6 @@ $RECYCLE.BIN/
 *.swm
 *.out
 *.pid
-package-lock.json
 
 ############################
 # Logs and databases
