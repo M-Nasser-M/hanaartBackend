@@ -4,7 +4,8 @@
   "info": {
     "singularName": "order",
     "pluralName": "orders",
-    "displayName": "order"
+    "displayName": "order",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -21,7 +22,8 @@
           "localized": true
         }
       },
-      "type": "decimal"
+      "type": "decimal",
+      "required": true
     },
     "estimated_delivery": {
       "pluginOptions": {
@@ -39,12 +41,15 @@
       },
       "type": "enumeration",
       "enum": [
-        "preparing",
-        "prepared",
-        "out for delivery",
-        "delivered",
-        "canceled"
-      ]
+        "Pending Payment",
+        "Accepted",
+        "Prepared",
+        "Out For Delivery",
+        "Delivered",
+        "Canceled"
+      ],
+      "required": true,
+      "default": "Pending Payment"
     },
     "users_permissions_user": {
       "type": "relation",

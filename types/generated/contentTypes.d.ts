@@ -711,6 +711,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::address.address'
     >;
+    cart: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToOne',
+      'api::cart.cart'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -995,6 +1000,48 @@ export interface ApiBlogMainPageBlogMainPage extends Schema.SingleType {
   };
 }
 
+export interface ApiCartCart extends Schema.CollectionType {
+  collectionName: 'carts';
+  info: {
+    singularName: 'cart';
+    pluralName: 'carts';
+    displayName: 'cart';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    users_permissions_user: Attribute.Relation<
+      'api::cart.cart',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    products: Attribute.Relation<
+      'api::cart.cart',
+      'manyToMany',
+      'api::product.product'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::cart.cart', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::cart.cart', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::cart.cart',
+      'oneToMany',
+      'api::cart.cart'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiCouponCoupon extends Schema.CollectionType {
   collectionName: 'coupons';
   info: {
@@ -1116,6 +1163,7 @@ export interface ApiOrderOrder extends Schema.CollectionType {
     singularName: 'order';
     pluralName: 'orders';
     displayName: 'order';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1127,6 +1175,7 @@ export interface ApiOrderOrder extends Schema.CollectionType {
   };
   attributes: {
     total: Attribute.Decimal &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1139,13 +1188,22 @@ export interface ApiOrderOrder extends Schema.CollectionType {
         };
       }>;
     order_status: Attribute.Enumeration<
-      ['preparing', 'prepared', 'out for delivery', 'delivered', 'canceled']
+      [
+        'Pending Payment',
+        'Accepted',
+        'Prepared',
+        'Out For Delivery',
+        'Delivered',
+        'Canceled'
+      ]
     > &
+      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Attribute.DefaultTo<'Pending Payment'>;
     users_permissions_user: Attribute.Relation<
       'api::order.order',
       'manyToOne',
@@ -1355,7 +1413,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       }>;
     category: Attribute.Enumeration<
       [
-        ' Art supplies',
+        'Art Supplies',
         'Hobbies',
         'Art Journaling',
         'Handmade Gifts',
@@ -1376,15 +1434,16 @@ export interface ApiProductProduct extends Schema.CollectionType {
       }>;
     subcategory: Attribute.Enumeration<
       [
-        'Pens, Pencils and Paints',
+        'Pens Pencils and Paints',
         'Brushes and Tools',
         'Canvas and Sketchbooks',
-        'Diamond Painting ',
+        'Diamond Painting',
         'Coloring Books',
         'Puzzles',
         'Tools',
-        'Washi Tapes and stickers',
-        'Paper packs and Ephemra'
+        'Washi Tapes and Stickers',
+        'Paper Packs and Ephemra',
+        'Wax Boxes and Tools'
       ]
     > &
       Attribute.SetPluginOptions<{
@@ -1392,6 +1451,11 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    carts: Attribute.Relation<
+      'api::product.product',
+      'manyToMany',
+      'api::cart.cart'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1483,6 +1547,7 @@ declare module '@strapi/types' {
       'api::address.address': ApiAddressAddress;
       'api::blog.blog': ApiBlogBlog;
       'api::blog-main-page.blog-main-page': ApiBlogMainPageBlogMainPage;
+      'api::cart.cart': ApiCartCart;
       'api::coupon.coupon': ApiCouponCoupon;
       'api::governorates-delivery.governorates-delivery': ApiGovernoratesDeliveryGovernoratesDelivery;
       'api::home.home': ApiHomeHome;

@@ -163,7 +163,7 @@
       },
       "type": "enumeration",
       "enum": [
-        " Art supplies",
+        "Art Supplies",
         "Hobbies",
         "Art Journaling",
         "Handmade Gifts",
@@ -188,16 +188,23 @@
       },
       "type": "enumeration",
       "enum": [
-        "Pens, Pencils and Paints",
+        "Pens Pencils and Paints",
         "Brushes and Tools",
         "Canvas and Sketchbooks",
-        "Diamond Painting ",
+        "Diamond Painting",
         "Coloring Books",
         "Puzzles",
         "Tools",
-        "Washi Tapes and stickers",
-        "Paper packs and Ephemra"
+        "Washi Tapes and Stickers",
+        "Paper Packs and Ephemra",
+        "Wax Boxes and Tools"
       ]
+    },
+    "carts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::cart.cart",
+      "mappedBy": "products"
     }
   }
 }
