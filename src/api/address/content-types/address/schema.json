@@ -4,7 +4,8 @@
   "info": {
     "singularName": "address",
     "pluralName": "addresses",
-    "displayName": "address"
+    "displayName": "address",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,7 +19,8 @@
       "type": "string"
     },
     "street": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "users_permissions_user": {
       "type": "relation",
@@ -27,10 +29,12 @@
       "inversedBy": "addresses"
     },
     "first_name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "last_name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "city": {
       "type": "enumeration",
@@ -62,10 +66,12 @@
         "Qena",
         "North Sinai",
         "Sohag"
-      ]
+      ],
+      "required": true
     },
     "floor": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "orders": {
       "type": "relation",
