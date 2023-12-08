@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -36,7 +36,17 @@
       "type": "string",
       "required": true
     },
-    "city": {
+    "floor": {
+      "type": "integer",
+      "required": true
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "address"
+    },
+    "governorate": {
       "type": "enumeration",
       "enum": [
         "Cairo",
@@ -69,18 +79,14 @@
       ],
       "required": true
     },
-    "floor": {
-      "type": "integer",
-      "required": true
-    },
-    "orders": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::order.order",
-      "mappedBy": "address"
-    },
-    "landmarks": {
+    "details": {
       "type": "text"
+    },
+    "phone": {
+      "type": "string",
+      "minLength": 11,
+      "maxLength": 11,
+      "regex": "^\\\\d+$"
     }
   }
 }

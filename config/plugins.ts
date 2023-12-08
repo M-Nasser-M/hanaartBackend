@@ -77,4 +77,14 @@ module.exports = ({ env }) => ({
   "import-export-entries": {
     enabled: true,
   },
+  "users-permissions": {
+    config: {
+      jwt: {
+        expiresIn: "30d",
+      },
+      register: {
+        allowedFields: ["username", "email", "password", "confirmed", "phone"],
+      },
+    },
+  },
 });
