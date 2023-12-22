@@ -39,10 +39,7 @@
       "multiple": true,
       "required": false,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ],
       "pluginOptions": {
         "i18n": {
@@ -55,10 +52,7 @@
       "multiple": false,
       "required": true,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ],
       "pluginOptions": {
         "i18n": {
@@ -146,21 +140,6 @@
       },
       "type": "biginteger"
     },
-    "category": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "enumeration",
-      "enum": [
-        "Art Supplies",
-        "Hobbies",
-        "Art Journaling",
-        "Handmade Gifts",
-        "Clearance"
-      ]
-    },
     "slug": {
       "pluginOptions": {
         "i18n": {
@@ -171,31 +150,32 @@
       "targetField": "name",
       "required": true
     },
-    "subcategory": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "enumeration",
-      "enum": [
-        "Pens Pencils and Paints",
-        "Brushes and Tools",
-        "Canvas and Sketchbooks",
-        "Diamond Painting",
-        "Coloring Books",
-        "Puzzles",
-        "Tools",
-        "Washi Tapes and Stickers",
-        "Paper Packs and Ephemra",
-        "Wax Boxes and Tools"
-      ]
-    },
     "cart_item": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::cart-item.cart-item",
       "mappedBy": "product"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "subcategories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::subcategory.subcategory",
+      "inversedBy": "products"
+    },
+    "featured": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "boolean",
+      "default": false
     }
   }
 }

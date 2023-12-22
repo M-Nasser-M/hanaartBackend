@@ -11,6 +11,17 @@ export interface SharedColors extends Schema.Component {
   };
 }
 
+export interface SharedLabelNote extends Schema.Component {
+  collectionName: 'components_shared_label_notes';
+  info: {
+    displayName: 'label-note';
+  };
+  attributes: {
+    label: Attribute.String & Attribute.Required;
+    note: Attribute.String;
+  };
+}
+
 export interface SharedMetaSocial extends Schema.Component {
   collectionName: 'components_shared_meta_socials';
   info: {
@@ -38,10 +49,12 @@ export interface SharedSeller extends Schema.Component {
   collectionName: 'components_shared_sellers';
   info: {
     displayName: 'seller';
+    description: '';
   };
   attributes: {
     name: Attribute.String;
     info: Attribute.RichText;
+    avatar: Attribute.Media;
   };
 }
 
@@ -77,6 +90,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'shared.colors': SharedColors;
+      'shared.label-note': SharedLabelNote;
       'shared.meta-social': SharedMetaSocial;
       'shared.seller': SharedSeller;
       'shared.seo': SharedSeo;

@@ -3,7 +3,6 @@
  * Any modifications made will be discarded.
  */
 import ckeditor5 from "@_sh/strapi-plugin-ckeditor/strapi-admin";
-import contentVersioning from "@notum-cz/strapi-plugin-content-versioning/strapi-admin";
 import colorPicker from "@strapi/plugin-color-picker/strapi-admin";
 import i18N from "@strapi/plugin-i18n/strapi-admin";
 import seo from "@strapi/plugin-seo/strapi-admin";
@@ -16,7 +15,6 @@ import { renderAdmin } from "@strapi/strapi/admin";
 renderAdmin(document.getElementById("strapi"), {
   plugins: {
     ckeditor5: ckeditor5,
-    "content-versioning": contentVersioning,
     "color-picker": colorPicker,
     i18n: i18N,
     seo: seo,
