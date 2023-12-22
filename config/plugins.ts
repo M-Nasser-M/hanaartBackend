@@ -71,9 +71,6 @@ module.exports = ({ env }) => ({
       maxAge: 604800,
     },
   },
-  "content-versioning": {
-    enabled: true,
-  },
   "import-export-entries": {
     enabled: true,
   },
