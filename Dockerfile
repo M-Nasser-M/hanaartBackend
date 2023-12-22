@@ -6,7 +6,8 @@ ENV NODE_ENV=${NODE_ENV}
 
 WORKDIR /hanaart-backend/
 COPY package.json package-lock.json ./
-RUN npm install --only=production
+RUN npm install -g node-gyp
+RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install --only=production
 ENV PATH /hanaart-backend/node_modules/.bin:$PATH
 WORKDIR /hanaart-backend/app
 COPY . .
