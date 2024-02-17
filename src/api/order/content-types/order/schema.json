@@ -21,20 +21,6 @@
       "pluginOptions": {},
       "type": "decimal"
     },
-    "order_status": {
-      "pluginOptions": {},
-      "type": "enumeration",
-      "enum": [
-        "Pending Payment",
-        "Accepted",
-        "Prepared",
-        "Out For Delivery",
-        "Delivered",
-        "Canceled"
-      ],
-      "required": true,
-      "default": "Pending Payment"
-    },
     "users_permissions_user": {
       "type": "relation",
       "relation": "manyToOne",
@@ -45,9 +31,9 @@
       "pluginOptions": {},
       "type": "enumeration",
       "enum": [
-        "Success",
-        "Declined",
-        "Pending"
+        "PENDING",
+        "SUCCESS",
+        "DECLINED"
       ]
     },
     "paymob_order_id": {
@@ -69,6 +55,16 @@
       "relation": "manyToOne",
       "target": "api::address.address",
       "inversedBy": "orders"
+    },
+    "order_status": {
+      "type": "enumeration",
+      "enum": [
+        "ACCEPTED",
+        "PREPARED",
+        "OUT FOR DELIVERY",
+        "DELIVERED",
+        "CANCELED"
+      ]
     }
   }
 }
