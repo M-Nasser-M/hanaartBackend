@@ -1357,8 +1357,8 @@ export interface ApiOrderOrder extends Schema.CollectionType {
       'plugin::users-permissions.user'
     >;
     payment_status: Attribute.Enumeration<['PENDING', 'SUCCESS', 'DECLINED']>;
-    paymob_order_id: Attribute.BigInteger;
-    paymob_transaction_id: Attribute.BigInteger;
+    paymob_order_id: Attribute.BigInteger & Attribute.Unique;
+    paymob_transaction_id: Attribute.BigInteger & Attribute.Unique;
     order_items: Attribute.Relation<
       'api::order.order',
       'oneToMany',

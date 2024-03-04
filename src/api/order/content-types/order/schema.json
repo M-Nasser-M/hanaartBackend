@@ -38,11 +38,13 @@
     },
     "paymob_order_id": {
       "pluginOptions": {},
-      "type": "biginteger"
+      "type": "biginteger",
+      "unique": true
     },
     "paymob_transaction_id": {
       "pluginOptions": {},
-      "type": "biginteger"
+      "type": "biginteger",
+      "unique": true
     },
     "order_items": {
       "type": "relation",
